@@ -99,8 +99,7 @@ const uploadProfilePic = async (req, res) => {
       // Generate a signed URL for the file
       const [url] = await fileUpload.getSignedUrl({
         action: "read",
-        // expires: Date.now() + 15 * 60 * 1000, // URL expires in 15 minutes
-        expires: Date.now() + 2 * 365 * 24 * 60 * 60 * 1000, // URL expires in 2 years
+        expires: Date.now() + 2 * 365 * 24 * 60 * 60 * 1000,
       });
       res.json({
         success: true,
